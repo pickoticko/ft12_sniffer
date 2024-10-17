@@ -43,9 +43,6 @@
   data
 }).
 
--ifndef(iec60870_asdu).
--define(iec60870_asdu, 1).
-
 -record(asdu, {
   type,
   t = 0,
