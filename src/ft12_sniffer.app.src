@@ -8,6 +8,7 @@
     eserial
    ]},
   {env,[]},
+  {mod, {ft12_sniffer_app, []}},
   {modules, []},
   {licenses, ["Apache 2.0"]},
   {links, []}

@@ -4,7 +4,7 @@
 %%% | License can be found in the LICENSE file.                      |
 %%% +----------------------------------------------------------------+
 
--module(ft12_parser).
+-module(ft12_sniffer_parser).
 -include("ft12_sniffer.hrl").
 
 %%% +--------------------------------------------------------------+
@@ -52,8 +52,8 @@ parse(ASDU, #{
   } = DUI,
   ParsedObjects =
     [begin
-       {Address, ft12_type:parse_information_element(Type, Object)}
-     end || {Address, Object} <- Objects]
+       {Address, ft12_sniffer_type:parse_information_element(Type, Object)}
+     end || {Address, Object} <- Objects],
   #asdu{
     type = Type,
     pn = PN,

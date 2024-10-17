@@ -18,8 +18,7 @@
 }).
 
 start_link(Configuration) ->
-  PID = spawn_link(fun() -> init_sniffer(Configuration) end),
-  {ok, PID}.
+  {ok, spawn_link(fun() -> init_sniffer(Configuration) end)}.
 
 init_sniffer(#{
   master := MasterConfig,
@@ -71,7 +70,7 @@ log_frame(From, #frame{
     org = ORG,
     coa = COA,
     objects = ParsedObjects
-  } = ft12_parser:parse(Data, ParserSettings),
+  } = ft12_sniffer_parser:parse(Data, ParserSettings),
   Name =
     case From of
       Master -> "MASTER";

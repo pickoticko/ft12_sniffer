@@ -4,7 +4,7 @@
 %%% | License can be found in the LICENSE file.                      |
 %%% +----------------------------------------------------------------+
 
--module(ft12_type).
+-module(ft12_sniffer_type).
 -include("ft12_sniffer.hrl").
 
 %%% +--------------------------------------------------------------+

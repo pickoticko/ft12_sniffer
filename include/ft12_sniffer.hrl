@@ -19,6 +19,16 @@
 -define(LOGDEBUG(Text),           ?LOG_DEBUG(?SELF ++ Text)).
 -define(LOGDEBUG(Text, Params),   ?LOG_DEBUG(?SELF ++ Text, Params)).
 
+-define(ENV(Key, Default), application:get_env(ft12_sniffer, Key, Default)).
+-define(ENV(OS, Config, Default),
+  (fun() ->
+    case os:getenv(OS) of
+      false -> ?ENV(Config,Default);
+      Value -> Value
+    end
+   end)()
+).
+
 %% Physical transmission direction
 -define(FROM_A_TO_B, 1).
 -define(FROM_B_TO_A, 0).
