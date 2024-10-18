@@ -18,6 +18,7 @@
 }).
 
 start_link(Configuration) ->
+
   {ok, spawn_link(fun() -> init_sniffer(Configuration) end)}.
 
 init_sniffer(#{
@@ -99,7 +100,7 @@ log_frame(From, #frame{
 }, #state{
   master = Master,
   slave = Slave
-}) when is_binary(Data) ->
+}) ->
   Name =
     case From of
       Master -> "MASTER";
