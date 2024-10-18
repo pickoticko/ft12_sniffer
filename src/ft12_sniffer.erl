@@ -95,8 +95,7 @@ log_frame(From, #frame{
 
 log_frame(From, #frame{
   address = Address,
-  control_field = ControlField,
-  data = Data
+  control_field = ControlField
 }, #state{
   master = Master,
   slave = Slave
