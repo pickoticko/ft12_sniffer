@@ -14,8 +14,8 @@
 -define(LOGERROR(Text, Params),   ?LOG_ERROR(?SELF ++ Text, Params)).
 -define(LOGWARNING(Text),         ?LOG_WARNING(?SELF ++ Text)).
 -define(LOGWARNING(Text, Params), ?LOG_WARNING(?SELF ++ Text, Params)).
--define(LOGINFO(Text),            ?LOG_INFO(?SELF ++ Text), io:format(?SELF ++ Text ++ "~n")).
--define(LOGINFO(Text, Params),    ?LOG_INFO(?SELF ++ Text, Params), io:format(?SELF ++ Text ++ "~n", Params)).
+-define(LOGINFO(Text),            ?LOG_INFO(?SELF ++ Text)).
+-define(LOGINFO(Text, Params),    ?LOG_INFO(?SELF ++ Text, Params)).
 -define(LOGDEBUG(Text),           ?LOG_DEBUG(?SELF ++ Text)).
 -define(LOGDEBUG(Text, Params),   ?LOG_DEBUG(?SELF ++ Text, Params)).
 
