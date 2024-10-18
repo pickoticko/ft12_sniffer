@@ -25,8 +25,11 @@ init_sniffer(#{
   slave := SecondConfig,
   parser_settings := ParserSettings
 }) ->
+  ?LOGINFO("Initializing sniffer..."),
   Master = ft12:start_link(MasterConfig),
+  ?LOGINFO("Started master FT12, pid: ~p", [Master]),
   Slave = ft12:start_link(SecondConfig),
+  ?LOGINFO("Started slave FT12, pid: ~p", [Slave]),
   sniffer_loop(#state{
     master = Master,
     slave = Slave,
